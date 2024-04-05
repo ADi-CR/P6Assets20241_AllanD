@@ -4,17 +4,25 @@
              x:Class="P6Assets20241_AllanD.Views.LoginPage"
              Shell.NavBarIsVisible="False"
              NavigationPage.HasNavigationBar="False"
-             BackgroundImageSource="loginbackground"
+             BackgroundImageSource="background2"
              >
-    <VerticalStackLayout>
+    <VerticalStackLayout VerticalOptions="Center" Padding="20,0, 20, 0">
 
-        <Entry x:Name="TxtEmail" Placeholder="Email..." FontSize="20" Keyboard="Email"  />
+        <Entry x:Name="TxtEmail" Placeholder="Email..." FontSize="20" Keyboard="Email" TextColor="WhiteSmoke" PlaceholderColor="WhiteSmoke" />
 
-        <Entry x:Name="TxtPassword" Placeholder="Password..." FontSize="20" Keyboard="Text" IsPassword="True" />
+        <Entry x:Name="TxtPassword" Placeholder="Password..." FontSize="20" Keyboard="Text" IsPassword="True" TextColor="WhiteSmoke" PlaceholderColor="WhiteSmoke" />
+        <Switch x:Name="SwVerPassword" IsToggled="False" Toggled="SwVerPassword_Toggled" />
 
-        <Button x:Name="BtnIngresar" Text="Ingresar" BackgroundColor="Green" TextColor="White" />
-        
-        
+        <Button x:Name="BtnIngresar" Text="LOGIN" BackgroundColor="Green" TextColor="White" Clicked="BtnIngresar_Clicked" Margin="0, 5, 0, 15" />
+
+        <Button x:Name="BtnSignUp" Text="SIGN UP" Clicked="BtnSignUp_Clicked" />
+
+        <Label x:Name="LblPasswordRecovery" Text="Password Recovery..." TextColor="#8E8641" HorizontalTextAlignment="End" Margin="0, 50, 0, 0" >
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Label.GestureRecognizers>            
+        </Label>
+
     </VerticalStackLayout>
     
 </ContentPage>

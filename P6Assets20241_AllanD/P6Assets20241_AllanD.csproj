@@ -57,11 +57,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\background2.png" />
+	  <None Remove="Resources\Images\background3.png" />
 	  <None Remove="Resources\Images\loginbackground.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="7.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.14" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.14" />
@@ -69,11 +71,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Models\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiXaml Update="Views\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\UserSignUpPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
