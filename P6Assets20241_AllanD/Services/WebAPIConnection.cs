@@ -16,15 +16,18 @@ namespace P6Assets20241_AllanD.Services
         //además, es importante indicar que normalmente los APIs 
         //trabajan en dos versiones: Pruebas y Producción 
 
-        public static string ProductionURLPrefix = "http://192.168.0.10:45457/api/";
+        public static string ProductionURLPrefix = "http://192.168.0.10:45455/api/";
 
-        public static string TestingURLPrefix = "http://192.168.0.10:45457/api/";
+        public static string TestingURLPrefix = "http://192.168.0.10:45455/api/";
 
         //además de la raíz de URL acá vamos a indicar cuál es la API Key que deberíamos 
         //usar para consumir los endpoints 
         public static string ApiKeyName = "P6ApiKey";
         public static string ApiKeyValue = "AllanDP6Apik123454321abc";
-               
+
+        public static string MimeType = "application/json";
+        public static string ContentType = "Content-Type";
+
 
     }
 }

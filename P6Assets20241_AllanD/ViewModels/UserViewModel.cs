@@ -11,12 +11,37 @@ namespace P6Assets20241_AllanD.ViewModels
     {
         public UserPost MyUserToPost { get; set; }
 
-        //TODO: crear modelos para el rol 
+        public UserRole MyUserRole { get; set; }
 
         public UserViewModel()
         {
             MyUserToPost = new UserPost();
+            MyUserRole = new UserRole();
         }
+
+        //carga de roles de usuarios 
+        public async Task<List<UserRole>?> GetAllUserRolesAsync()
+        {
+            try
+            {
+                List<UserRole>? roles = new List<UserRole>();
+
+                roles = await MyUserRole.GetAllUserRolesAsync();
+
+                if (roles == null) 
+                {
+                    return null;
+                }
+
+                return roles;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
 
 
     }
