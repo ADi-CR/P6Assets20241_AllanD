@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RestSharp;
+using RestSharp.Authenticators;
 
 namespace P6Assets20241_AllanD.Models
 {
@@ -17,7 +18,9 @@ namespace P6Assets20241_AllanD.Models
         //en lo personal he encontrado más fácil y eficiente el uso de 
         //restSharp. 
 
-        public RestRequest request {  get; set; } 
+        public RestRequest request { get; set; }
+        const string mimeType = "application/json";
+        const string contentType = "Content-Type";
 
         public int UserRoleId { get; set; }
 
@@ -38,16 +41,16 @@ namespace P6Assets20241_AllanD.Models
                 //armamos la ruta completa de consumo del API 
                 string URL = Services.WebAPIConnection.ProductionURLPrefix + RouterSufix;
                 //ahora tenemos la ruta completa lista 
-
+                                
                 //configuramos el request 
-                RestClient client = new RestClient(URL);
+                var client = new RestClient(URL);
 
                 request = new RestRequest(URL, Method.Get);
 
                 //agregamos el método se seguridad, en este caso tenemos apikey 
-                request.AddHeader(Services.WebAPIConnection.ApiKeyName, 
+                request.AddHeader(Services.WebAPIConnection.ApiKeyName,
                                   Services.WebAPIConnection.ApiKeyValue);
-                                
+
                 //y ahora ejecutamos la llamada al API
                 RestResponse response = await client.ExecuteAsync(request);
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="P6Assets20241_AllanD.Views.OptionsPage"
+             Title="OptionsPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Select an Action"
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="CenterAndExpand" 
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Center"
+            FontSize="30"/>
+        
+            <!--agregar por medio de un Grid (deben investigar cómo se usa) 
+            de 2 columnas * 3 filas 
+            6 botones para imitar el mockup de la UI de selección de acciones-->
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>
